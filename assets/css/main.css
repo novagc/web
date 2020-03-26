@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,800,600,700&display=swap&subset=cyrillic');
+
+html, body {
+    background-color: #f5f5f5;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    outline: none;
+    transition: .5s linear;
+}
+
+/*Index*/
+
+.header {
+    height: 10vh;
+    background: #2e3842;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.menu > li {
+    position: relative;
+    display: inline-block;
+    transition: .28s;
+    width: 250px;
+}
+
+.menu > li:hover {
+    background: #525e69;
+    color: rgb(30, 30, 30);
+}
+
+.menu .title {
+    height: 10vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .submenu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    background: #2e3842;
+    z-index: 1;
+}
+
+.submenu a {
+    color: white
+}
+
+.menu .title:hover + .submenu {
+    display: block;
+}
+
+.menu .submenu:hover {
+    display: block;
+}
+
+.submenu > li:hover {
+    background: #525e69;
+}
+
+.submenu > li:hover > a {
+    color: rgb(30, 30, 30);
+}
+
+.content {
+    height: 84vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.banners {
+    background: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banners img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.banners #kira {
+    width: 20vw;
+    height: auto;
+    border-radius: 0;
+}
+
+.workspace {
+    overflow-y: auto;
+}
+
+.footer {
+    width: 100%;
+    height: 6vh;
+    color: #8E9295;
+    background: #1D242A;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Общее */
+
+.poem, .me {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Стих */
+
+.poem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poem > div {
+    max-width: 50vw;
+}
+
+.poem .title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.poem .author {
+    width: 100%;
+    text-align: right;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Обо мне */
+
+.me .image img{
+    float: left;
+    margin: 5px 5px 5px 0;
+}
+
+.me .text .title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.me h3 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* Медиа запрос */
+@media print {
+    img {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .banners {
+        display: none;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .workspace {
+        width: 100%;
+        height: 100%;
+        overflow-y: hidden;
+    }
+}
